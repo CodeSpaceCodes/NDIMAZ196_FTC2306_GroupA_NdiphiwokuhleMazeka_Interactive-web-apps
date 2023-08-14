@@ -28,6 +28,7 @@ const minuteOfDay = '00';
 // console.log(typeof taxToInt, taxToInt) mainly to check what data type does coercing tax to integer give
 
 let balance = 0     // define balance out of in this global scope
+let taxToInt = parseInt(tax);
 
 
 if (((hourOfDay !== null) && (minuteOfDay !== null)) && ((hourOfDay === '00') && (minuteOfDay === '00'))) {
