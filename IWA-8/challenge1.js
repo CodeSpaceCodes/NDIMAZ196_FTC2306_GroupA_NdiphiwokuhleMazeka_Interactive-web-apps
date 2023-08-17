@@ -36,6 +36,6 @@ const sarah = {
 		postalCode : sarahPostal
 	}
 }
-// Added commas to separate the object elements
+// Added commas to separate the object elements or object keys
 console.log(leo, leo.address.postalCode)
 console.log(sarah, sarah.address.postalCode)		//added dot operators here for correct referencing
