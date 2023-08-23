@@ -10,3 +10,9 @@ import * as johhanes from './johannes.js';
 import * as alex from './alex.js'
 
 console.log('Roles:', nwabisa.role, johhanes.role, alex.role)
+
+// import role from './nwabisa.js';
+// import role from './johannes.js';
+// import role from './alex.js'
+
+// console.log('Roles:', nwabisa.role, johhanes.role, alex.role)

@@ -34,7 +34,7 @@ let toys = 100*5
 let shirts = 150*NONE_SELECTED  // removed quotes on variable to retrieve variable value
 let batteries = 35*2
 let pens = 5*NONE_SELECTED       //same as line 34
-let customers=1
+let customers=2
 
 let itemCost = shoes+toys+shirts+batteries+pens    // calculate the cost without shipping
 // console.log(currency, itemCost)
