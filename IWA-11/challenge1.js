@@ -1,11 +1,40 @@
 // script.js
-const tryIt = Array.from(document.querySelectorAll('body section dl'))
-const order1 = tryIt[0]
-console.log(order1)
-const order2 = tryIt[1]
-const order3 = tryIt[2]
+const order1 = document.querySelector('[data-biscuits="10"]')
 
+const biscuits1 = order1.querySelector('.biscuits')
+biscuits1.querySelector('dd').innerHTML = order1.dataset.biscuits
 
+const donuts1 = order1.querySelector('.donuts')
+donuts1.querySelector('dd').innerHTML = order1.dataset.donuts
+
+const pancakes1 = order1.querySelector('.pancakes')
+pancakes1.querySelector('dd').innerHTML = order1.dataset.pancakes
+
+const delivered1 = order1.querySelector('.status')
+delivered1.querySelector('dd').innerHTML = order1.dataset.delivered
+
+//next order
+
+const order2 = document.querySelector('[data-key="order2"]')
+const biscuits2 = order2.querySelector('.biscuits')
+biscuits2.querySelector('dd').innerHTML = order2.dataset.biscuits
+const donuts2 = order2.querySelector('.donuts')
+donuts2.querySelector('dd').innerHTML = order2.dataset.donuts
+const pancakes2 = order2.querySelector('.pancakes')
+pancakes2.querySelector('dd').innerHTML = order2.dataset.pancakes
+const delivered2 = order2.querySelector('.status')
+delivered2.querySelector('dd').innerHTML = order2.dataset.delivered
+//next order
+
+const order3 = document.querySelector('[data-key="order3"]')
+const biscuits3 = order3.querySelector('.biscuits')
+biscuits3.querySelector('dd').innerHTML = order3.dataset.biscuits
+const donuts3 = order3.querySelector('.donuts')
+donuts3.querySelector('dd').innerHTML = order3.dataset.donuts
+const pancakes3 = order3.querySelector('.pancakes')
+pancakes3.querySelector('dd').innerHTML = order3.dataset.pancakes
+const delivered3 = order3.querySelector('.status')
+delivered3.querySelector('dd').innerHTML = order3.dataset.delivered
 
 // const tryIt1 = document.querySelector('body section dl:first-child')
 // console.log(tryIt1.dataset)
