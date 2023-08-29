@@ -3,12 +3,6 @@ let user = null
 let calculated = '1'
 
 // Only allowed to change below
-/** Pseudo-code
- * 
- * What is the current system status
- * what is the user name
- * how many times has calcUser been called
- */
 
 // fix the function declaration syntax
 
