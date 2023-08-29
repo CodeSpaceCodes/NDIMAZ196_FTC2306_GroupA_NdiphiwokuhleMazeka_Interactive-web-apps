@@ -3,25 +3,31 @@ let user = null
 let calculated = '1'
 
 // Only allowed to change below
+/** Pseudo-code
+ * 
+ * What is the current system status
+ * what is the user name
+ * how many times has calcUser been called
+ */
 
-// on all three function declarations, syntax fixed to the proper arrow syntax
+// fix the function declaration syntax
 
-/**this function tries to find the number of the number of times the user logged
- * in or function is called */
-const logCalc = (calculated) => { 
-    const convertToNumberIfString = (typeof calculated)=== 'string'? parseInt(calculated): calculated
-    // const calculatedAsNumber = isString ? calculated : parseNumber(calculated)
-    calculated = convertToNumberIfString + 1
-    return(calculated) 
+// this function calculates the number this function is called
+const logCalc = () => { 
+// this line checks data type of calculated
+   // const isString = typeof calculated = 'numerical-string' 
+    const calculatedAsNumber = (typeof calculated) === 'string'? parseInt(calculated) : calculated
+    calculated = calculatedAsNumber + 1 
 }
 
-const calcUser = (logCalc) => { 
-  if (logCalc > 2) user = 'John'
-  if (logCalc > 2) state = 'requesting'
-  if (logCalc > 3) state = 'idle'
+const calcUser = () => {
+  logCalc()
+  if (calculated > 2) user = 'John'
+  if (calculated > 2) state = 'requesting'
+  if (calculated > 3) state = 'idle'
 }
 
-const checkUser = (user, state, calculated) => {
+const checkUser = () => {
 	if (user && state === 'requesting') {
 		console.log(`User: ${user} (${calculated})`)
 	}
