@@ -55,21 +55,6 @@ const futureId = 9
 // checks for match in the holiday object keys
 console.log(holidays[futureId] && holidays[futureId].name || `ID ${futureId} not created yet`)
 
-
-//create a version of the Christmas object in the copied object
-//create the correct date on a seperate variable
-//create a new name on a seperate variable
-//check for an earlier date between the new date and the initial one
-//if new date is earlier than the initial date then
-// log on the console 'The new date is earlier: True' 
-//then update the initial date to the newer date
-//update the object name to the new name
-//Otherwise if the new date is later log false on the console
-//while the new date is earlier, then
-//apply the changes to the copied object
-//where change have been made, the updated change should be logged in on the chane tracking variable
-//else log false on the change tracking variable
-
 /*flags */
 let idChange = 'false'
 let nameChange = 'false'
@@ -96,7 +81,7 @@ if(holidays[christmas].date>correctDate){
 }else{
     console.log(`${newDateEvaluation} false`)
 }
-console.log(`${idChanged} ${idChange}\n${nameChanged} ${nameChange}\n${dateChanged} ${dateChange.getDate()}/${dateChange.getMonth()}/${dateChange.getFullYear()}`)
+console.log(`${idChanged} ${idChange}\n${nameChanged} ${nameChange}\n${dateChanged} ${dateChange.getDate()}/${dateChange.getMonth()+1}/${dateChange.getFullYear()}`)
 // console.log(copied)
 
 // finds the correct date and updates the name and initial date
@@ -105,50 +90,47 @@ function findTheCorrectDate(objectToBeModified ,newDate){
     objectToBeModified.date = newDate
 }
 
+// //find the first holiday
+// Note! originally the "new Date()" command returns an object, but once it is
+// operated within an object, it return a string data type inside that object
+let firstHoliday = Date.parse(holidays[0].date)
+for(let i = 0; i < futureId; i++){
+    if(firstHoliday > Date.parse(holidays[i].date)){
+        firstHoliday = Date.parse(holidays[i].date)
+    }
+}
 
-// copied = holidays.christmas
-// copied = { name: 'X-mas Day' }
-// correctDate = copied.date
-// correctDate.hours = 0
-// correctDate.minutes = 0
-// isEarlier = copied.date < holidays[6].date
-// console.log('New date is earlier:', isEarlier)
-// if (isEarlier) copied.date = correctDate
-// console.log('ID change:', holidays[christmas].id != copied.id || copied.id)
-// console.log('Name change:', holidays[christmas].name != copied.name || copied.name)
-// console.log('Date change:', holidays[christmas].date != copied.date || copied.date)
+firstHoliday = new Date(firstHoliday)
+const firstHolidayDate = firstHoliday.getDate()<10? `0${firstHoliday.getDate()}`: firstHoliday.getDate()
+const firstHolidayMonth = (firstHoliday.getMonth() + 1)<10? `0${(firstHoliday.getMonth() + 1)}`: firstHoliday.getMonth() + 1
+const firstHolidayYear = firstHoliday.getFullYear()
+console.log(`The first holiday in the year: ${firstHolidayDate}/${firstHolidayMonth}/${firstHolidayYear}`)
+// end first holiday
 
-// const firstHolidayTimestamp = Math.min(
-//     holidays[0].date.getTime,
-//     holidays[1].date.getTime,
-//     holidays[2].date.getTime,
-//     holidays[3].date.getTime,
-//     holidays[4].date.getTime,
-//     holidays[5].date.getTime,
-//     holidays[6].date.getTime,
-//     holidays[7].date.getTime,
-//     holidays[8].date.getTime,
-// )
+//find the last holiday
+let lastHoliday = Date.parse(holidays[0].date)
+for(let i = 0; i < futureId; i++){
+    if(lastHoliday < Date.parse(holidays[i].date)){
+        lastHoliday = Date.parse(holidays[i].date)
+    }
+}
 
-// const lastHolidayTimestamp = Math.max(
-//     holidays[0].date.getTime,
-//     holidays[1].date.getTime,
-//     holidays[2].date.getTime,
-//     holidays[3].date.getTime,
-//     holidays[4].date.getTime,
-//     holidays[5].date.getTime,
-//     holidays[6].date.getTime,
-//     holidays[7].date.getTime,
-//     holidays[8].date.getTime,
-// )
+lastHoliday = new Date(lastHoliday)
+const lastHolidayDate = (lastHoliday.getDate()<10)? `0${lastHoliday.getDate()}`: lastHoliday.getDate()
+const lastHolidayMonth = (lastHoliday.getMonth() + 1)<10? `0${(lastHoliday.getMonth() + 1)}`: lastHoliday.getMonth() + 1
+const lastHolidayYear = lastHoliday.getFullYear()
+console.log(`The last holiday in the year: ${lastHolidayDate}/${lastHolidayMonth}/${lastHolidayYear}`)
+// end last holiday
 
-// const firstDay = firstHolidayTimestamp.getDate
-// const firstMonth = firstHolidayTimestamp.getMonth
-// const lastDay = lastHolidayTimestamp.getDate
-// const lastMonth = lastHolidayTimestamp.getMonth
 
-// console.log('{firstDay}/{firstMonth}/{currentYear}')
-// console.log('{lastDay}/{lastMonth}/{currentYear}')
+//generate random random date
+const randomNumber = Math.floor(Math.random()*futureId)
 
-// const randomHoliday = holidays[Math.random]
-// console.log(randomHoliday.date)
+let randomDate = new Date (holidays[randomNumber].date)
+console.log(randomDate)
+const randomDateDay = randomDate.getDate()<10? `0${randomDate.getDate()}`: randomDate.getDate()
+const randomDateMonth = (randomDate.getMonth() + 1)<10? `0${(randomDate.getMonth() + 1)}`: randomDate.getMonth() + 1
+const randomDateYear = randomDate.getFullYear()
+
+console.log(`Random date: ${randomDateDay}/${randomDateMonth}/${randomDateYear}`)
+//end random date
