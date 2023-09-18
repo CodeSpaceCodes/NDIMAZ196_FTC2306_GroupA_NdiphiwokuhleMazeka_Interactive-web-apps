@@ -38,7 +38,11 @@ const handleDragOver = (event) => {
  */
 const handleDragStart = (event) => {}
 
-
+/**
+ * handler fires when the 
+ * 
+ * @param {*} event 
+ */
 const handleDragEnd = (event) => {
     event.preventDefault();
     const targetColumn = updateColumn;
